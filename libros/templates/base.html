@@ -1,0 +1,41 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Biblioteca - Libros</title>
+    <meta name="description" content="Libros de la biblioteca por géneros.">
+    <link rel="icon" href="{% static 'img/favicon.ico' %}">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+</head>
+
+
+<body>
+    <div class="container" style="font-size: .9em;">
+        {% block content %}{% endblock content %}
+    </div>
+
+
+    {% block extra_js %}
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    {% endblock extra_js %}
+</body>
+
+
+<footer class="footer" style="margin-top: 25px;">
+    <div class="container">
+        <p class="text-muted text-center">
+            Copyright © 2022 - Alumnos de tercer año Desarrollo de Software
+        </p>
+    </div>
+</footer>
+
+
+</html>

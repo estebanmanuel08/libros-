@@ -1,0 +1,94 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div align="center">
+        <img src="{% static 'img/logo.png' %}" align="left" width="20%" height="20%">
+        <br>
+        <br>
+        <h2 align="center">DataTables - Server side processing</h2>
+        <br clear="all">
+    </div>
+
+
+    <!-- Nombre de la tabla y botón nuevo -->
+    <div class="row align-items-center">
+        <div class="col-md-4" >
+            <h2>Libros</h2>
+        </div>
+        <div class="col-md-4 ms-auto" align="center">
+            <button type="button" data-dismiss="modal" class="btn btn-primary" id="new" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Nuevo</button>
+        </div>
+        <hr>
+    </div>
+
+
+    <!-- tablaLibros -->
+    <table id="tablaLibros" class="table table-sm table-striped row-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Título</th>
+                <th>Género</th>
+                <th>Created_at</th>
+                <th>Updated_at</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+            </tr>
+        </tfoot>
+    </table>
+
+
+    <!-- Nuevo y editar modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Contenido modal -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modal_title"></h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="title"><span class="glyphicon glyphicon-pencil"></span> Título</label>
+                            <input type="text" class="form-control" id="title" name="title"
+                                placeholder="Ingrese título" required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="genre"><span class="glyphicon glyphicon-file"></span> Género</label>
+                            <input type="text" class="form-control" id="genre" name="genre"
+                                placeholder="Ingrese género" required="true">
+                        </div>
+                        <input type="hidden" id="type" name="type" value="">
+                        <br>
+                        <button type="submit" class="btn btn-success btn-block"><span
+                                class="glyphicon glyphicon-ok"></span> OK
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Eliminar modal -->
+    <div class="modal fade" id="confirm" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Estás seguro?</h4>
+                </div>
+                <br>
+                <div class="modal-body">
+                    <button type="button" data-dismiss="modal" class="btn btn-danger" id="delete">Eliminar</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-secondary" id="cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
